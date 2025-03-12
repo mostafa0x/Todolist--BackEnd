@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 const urldb = process.env.MONGODB_URI;
 
@@ -40,10 +41,7 @@ const DbTask = mongoose.model("data", TaskSchema); // تاني برمتر هوا
 const DbUsers = mongoose.model("users", UsersSchema); // تاني برمتر هوا الاسكيما نفهم بقااا
 
 mongoose
-  .connect(
-    urldb ||
-      "mongodb+srv://dodomido12350:jDxDKXKUQUSy4kFo@cluster0.xjii3.mongodb.net/TestApi"
-  )
+  .connect(urldb)
   .then(() => {
     console.log("Connected to DB");
   })
