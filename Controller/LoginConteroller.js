@@ -17,10 +17,9 @@ module.exports = {
         .status(400)
         .json({ message: "Password must be at least 8 characters" });
     }
+    const user = await UserDb.findOne({ email: email });
 
     try {
-      const user = await UserDb.findOne({ email: email });
-
       if (!user) {
         return res.status(401).json({ message: "Wrong email or password!" });
       }
