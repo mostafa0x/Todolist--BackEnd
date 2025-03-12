@@ -7,7 +7,7 @@ const methodOverride = require("method-override");
 
 const port = process.env.PORT || 8080;
 const corsOptions = {
-  origin: "http://localhost:3001",
+  origin: "https://taskmanger-umber.vercel.app",
   methods: "GET,POST,PUT,DELETE",
   allowedHeaders: "Content-Type, Authorization",
 };
