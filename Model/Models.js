@@ -12,7 +12,6 @@ const UsersSchema = new mongoose.Schema({
   },
 });
 
-
 const DbSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -39,9 +38,7 @@ const DbTask = mongoose.model("data", TaskSchema); // تاني برمتر هوا
 const DbUsers = mongoose.model("users", UsersSchema); // تاني برمتر هوا الاسكيما نفهم بقااا
 
 mongoose
-  .connect(
-    "mongodb+srv://dodomido12350:jDxDKXKUQUSy4kFo@cluster0.xjii3.mongodb.net/TestApi"
-  )
+  .connect(process.env.urldb)
   .then(() => {
     console.log("Connected to DB");
   })
