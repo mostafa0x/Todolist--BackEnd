@@ -5,6 +5,7 @@ const Router = require("./Router/Router");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 
+const port = process.env.PORT || 8080;
 const corsOptions = {
   origin: "http://localhost:3001",
   methods: "GET,POST,PUT,DELETE",
@@ -18,4 +19,4 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use("/", Router.AuthRouter, Router.TaskRouter);
 
-app.listen(3000, () => console.log("Server Work on 3000 port "));
+app.listen(port, () => console.log(`Server Work on ${port} port`));

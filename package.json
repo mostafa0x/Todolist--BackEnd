@@ -4,6 +4,9 @@
   "description": "backend Todolist",
   "license": "ISC",
   "author": "mostafa ahmed",
+  "engines": {
+    "node": "22.12.0"
+  },
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
