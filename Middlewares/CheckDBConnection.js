@@ -1,11 +1,9 @@
 const monges = require("mongoose");
 
 async function CheckDB(req, res, next) {
-  if (monges.connection.readyState !== 1) {
+  if (monges.connection.readyState === 0) {
     return res.status(500).json({
-      message:
-        "Server is not connected. Please try again later." +
-        monges.Error.Messages,
+      message: "Server is not connected. Please try again later.",
     });
   }
   next();
