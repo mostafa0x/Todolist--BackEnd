@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Data = require("../Model/Models").DbTask;
+require("dotenv").config();
 
 module.exports = {
   index: async (req, res) => {

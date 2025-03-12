@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+const urldb = process.env.MONGODB_URI;
+
 const UsersSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -38,7 +40,10 @@ const DbTask = mongoose.model("data", TaskSchema); // تاني برمتر هوا
 const DbUsers = mongoose.model("users", UsersSchema); // تاني برمتر هوا الاسكيما نفهم بقااا
 
 mongoose
-  .connect(process.env.urldb)
+  .connect(
+    urldb ||
+      "mongodb+srv://dodomido12350:jDxDKXKUQUSy4kFo@cluster0.xjii3.mongodb.net/TestApi"
+  )
   .then(() => {
     console.log("Connected to DB");
   })
